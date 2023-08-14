@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corretora de Seguros ABC</title>
+     <style>
+ 	#floating-button {
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 20px;
+            line-height: 50px;
+            cursor: pointer;
+            z-index: 9999;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        #floating-button:hover {
+            transform: scale(1.3);
+        }
+/* Adicione media queries para ajustar o botão em dispositivos menores */
+@media screen and (max-width: 768px) {
+    #floating-button {
+        right: 30px;
+        bottom: 30px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        line-height: 40px;
+    }
+}
+
+               /* Estilo da barra de navegação */
+        nav {
+            background-image: url(image2.png);
+            color: #ffffff; /* Texto branco */
+            padding: 10px;
+												display: flex;
+            align-items: center;
+        }
+ 	 nav img.logo {
+            width: 130px;
+            height: 50px;
+            margin-right: 200px;
+	margin-left: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: black; /* Texto branco */
+            text-decoration: none;
+									cursor: pointer;
+								font-size:25px;
+									transition: transform 0.2s ease-in-out;
+        }
+					 #nav ul li a:hover {
+            transform: scale(1.3);
+        }
+
+ 	nav ul.social-logos {
+            display: flex;
+            justify-content: flex-end;
+        }
+	nav ul.social-logos2 {
+            display: flex;
+            justify-content: flex-end;
+        }
+        nav ul.social-logos li {
+            margin-right: 10px;
+	margin-left: 150px;
+        }
+  	nav ul.social-logos2 li {
+            margin-right: 10px;
+
+}
+        nav ul.social-logos li a img {
+            width: 30px;
+            height: 30px;
+        }
+					
+	nav ul.social-logos2 li a img {
+            width: 30px;
+            height: 30px;
+        }
+					
+					 /* Estilização do menu dropdown */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+            width: 100px;
+        }
+
+        .dropdown-content {
+            background-color: aliceblue;
+            background-size: cover;
+            display: none;
+            position: absolute;
+            top: 25px;
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            font-size: 20px;
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+/* Adicione as media queries para ajustar os estilos em diferentes tamanhos de tela */
+@media screen and (max-width: 768px) {
+    /* Estilos para dispositivos com largura de tela menor ou igual a 768px */
+    nav img.logo {
+        margin-right: 20px;
+        margin-left: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Estilos para dispositivos com largura de tela menor ou igual a 480px */
+    nav img.logo {
+        width: 100px;
+        height: 40px;
+    }
+}
+
+        /* Estilo do conteúdo */
+        h1, h2 {
+            color: black; /* Títulos em azul */
+        }
+
+        a {
+            color: #0000ff; /* Links em azul */
+            text-decoration: none;
+        }
+         
+        body {
+            font-family: Arial, sans-serif;
+	    background-image: url(image2.png);
+            margin: 20px;
+											align-content: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2980b9;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #3498db;
+        }
+
+        input[type="text"],
+        input[type="number"],
+        select {
+            width: 97%;
+									height: 30px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            transition: border-color 0.3s ease;
+            border-width: 2px;
+            font-size: 16px;
+        }
+
+        input[type="text"]:focus,
+        input[type="number"]:focus,
+        select:focus {
+            border-color: #3498db;
+            outline: none;
+        }
+
+        input[type="radio"] {
+									
+            margin-right: 5px;
+            transform: scale(1.2); /* Deixa os botões de rádio um pouco maiores */
+        }
+
+        #detalhesSinistro {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+
+        #detalhesSinistro label,
+        #detalhesSinistro input {
+            display: block;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        input[type="submit"] {
+            background-color: #e67e22;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border-width: 2px;
+            font-size: 16px;
+            text-transform: uppercase;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #d35400;
+        }
+						
+							 /* Estilos para o container */
+    .container {
+      display: flex;
+      align-items: center;
+					 justify-content: space-around;
+					height: 250px;
+					border-top: 2px solid blue;
+					margin-top: 20px;
+    }
+
+    /* Estilos para o logotipo */
+    .logo {
+      width: 200px;
+      height: 100px;
+      /* Adicione seus estilos personalizados para o logotipo aqui */
+    }
+
+    /* Estilos para os textos */
+    .textos, .onde {
+      text-align: center;
+					font-size: 20px;
+				
+      /* Adicione seus estilos personalizados para os textos aqui */
+    }
+					
+					/* Estilos para o rodapé */
+     .rodape {
+						color: white;
+      background-color: royalblue;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Estilos para o texto dos direitos reservados */
+    .direitos {
+      float: left;
+					 margin-left:100px;
+    }
+
+    /* Estilos para o texto dos criadores */
+    .criadores {
+      float: right;
+					 margin-right:100px;
+    }
+    </style>
+</head>
+<body>
+
+     <!-- Barra de navegação -->
+    <nav>
+	<img class="logo" src="logo2.png" alt="Logo">
+        <ul>
+            <li><a href="home.html">Sobre Nós</a></li>
+            <li><div class="dropdown">
+        <a href="#">Serviços</a>
+        <div class="dropdown-content">
+            <a href="pag1.html">Serviço para Transportador</a>
+            <a href="pag2.html">Serviço para Embargador</a>
+        </div>
+    </div>
+            </li>
+            <li><a href="cotacao.html">Cotação</a></li>
+        </ul>
+	<ul class="social-logos">
+          <li><a href="https://instagram.com/venturicorretora?igshid=Y2I2MzMwZWM3ZA==" target='_blank'><img src="instagram.png" alt="Instagram"></a></li>
+	</ul>
+
+    </nav>
+	
+	
+<h1>Formulário de Transportadora</h1>
+    <form action="https://formspree.io/f/xnqknwrn" method="POST" >
+					<label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+        
+
+        <label for="cnpj">CNPJ:</label>
+        <input type="text" id="cnpj" name="cnpj" required>
+        <button type="button" onclick="validarCNPJ()">Verificar CNPJ</button>
+        <span id="cnpj-validation-status"></span>
+        
+
+        <label for="telefone">Telefone:</label>
+        <input type="text" id="telefone" name="telefone" required>
+      
+        <input type="radio" id="telefone_fixo" name="tipo_telefone" value="fixo" required>
+        <label for="telefone_fixo">Telefone Fixo</label>
+        <input type="radio" id="telefone_celular" name="tipo_telefone" value="celular" required>
+					<label for="telefone_celular">Celular</label>
+        <label for="mercadorias">Principais mercadorias:</label>
+        <input type="text" id="mercadorias" name="mercadorias" required>
+
+        <label for="valorMaximo">Valor máximo por embarque:</label>
+        <input type="number" id="valorMaximo" name="valorMaximo" required>
+
+        <label for="valorMedio">Valor médio por embarque:</label>
+        <input type="number" id="valorMedio" name="valorMedio" required>
+
+        <label for="frota">Frota:</label>
+        <select id="frota" name="frota" required>
+            <option value="propria">Própria</option>
+            <option value="agregados">Agregados</option>
+            <option value="terceiros">Terceiros</option>
+        </select>
+
+        <label for="rotas">Principais rotas (UF de origem x UF de destino):</label>
+        <input type="text" id="rotas" name="rotas" required>
+
+        <label for="gerenciadoraRisco">Gerenciadora de risco utilizada:</label>
+        <input type="text" id="gerenciadoraRisco" name="gerenciadoraRisco" required>
+
+        <label for="apoliceVigente">Possui apólice vigente?</label>
+        <input type="radio" id="simApolice" name="apoliceVigente" value="sim" required>
+        <label for="simApolice">Sim</label>
+        <input type="radio" id="naoApolice" name="apoliceVigente" value="nao" required>
+        <label for="naoApolice">Não</label>
+
+        <label for="teveSinistro">Teve sinistro nos últimos 12 meses?</label>
+        <input type="radio" id="simSinistro" name="teveSinistro" value="sim" required>
+        <label for="simSinistro">Sim</label>
+        <input type="radio" id="naoSinistro" name="teveSinistro" value="nao" required>
+        <label for="naoSinistro">Não</label>
+
+        <div id="detalhesSinistro" style="display: none;">
+            <label for="tipoSinistro">Tipo de sinistro:</label>
+            <input type="text" id="tipoSinistro" name="tipoSinistro">
+
+            <label for="valorPrejuizo">Valor do prejuízo:</label>
+            <input type="number" id="valorPrejuizo" name="valorPrejuizo">
+
+            <label for="localOcorrencia">Local da ocorrência:</label>
+            <input type="text" id="localOcorrencia" name="localOcorrencia">
+
+            <label for="dataOcorrencia">Data da ocorrência:</label>
+            <input type="date" id="dataOcorrencia" name="dataOcorrencia">
+        </div>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+    <script>
+        // Ajuste para exibir ou esconder campos de sinistro conforme opção selecionada
+        const simSinistro = document.getElementById('simSinistro');
+        const naoSinistro = document.getElementById('naoSinistro');
+        const detalhesSinistro = document.getElementById('detalhesSinistro');
+
+        function mostrarDetalhesSinistro() {
+            detalhesSinistro.style.display = simSinistro.checked ? 'block' : 'none';
+        }
+
+        simSinistro.addEventListener('change', mostrarDetalhesSinistro);
+        naoSinistro.addEventListener('change', mostrarDetalhesSinistro);
+
+        // Garantir que ao carregar a página, os detalhes do sinistro sejam exibidos corretamente
+        mostrarDetalhesSinistro();
+					function validarCNPJ() {
+            const cnpjInput = document.getElementById("cnpj");
+            const cnpjValidationStatus = document.getElementById("cnpj-validation-status");
+            const cnpj = cnpjInput.value.replace(/[^\d]+/g, '');
+
+            if (cnpj === '') {
+                cnpjValidationStatus.textContent = "Digite um CNPJ válido.";
+                return;
+            }
+
+            if (cnpj.length !== 14 || !isValidCNPJ(cnpj)) {
+                cnpjValidationStatus.textContent = "CNPJ inválido.";
+                return;
+            }
+
+            cnpjValidationStatus.textContent = "CNPJ válido.";
+        }
+
+        function isValidCNPJ(cnpj) {
+            const validCNPJ = [ /* Lista de CNPJs válidos, se necessário */ ];
+            return validCNPJ.includes(cnpj);
+        }
+    </script>
+<a id="floating-button" href="#" target="_blank">
+        <img src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-png-0-1080x1080.png" alt="Imagem do botão" width="85" height="85">
+    </a>
+	<div class="container">
+    <img class="logo" src="logo3.png" alt="Logo">
+    <div class="textos">
+      <h2>Telefones para contato</h2>
+      <p>(11) 2506-2380</p>
+					 <p>(11) 2506-2354</p>
+	</div>
+    <div class="onde">
+	     <h2>Onde estamos</h2>
+      <p>Rua Serra de Botucatu, 1195 - sala 108 - Tatuapé</p>
+					<p>São Paulo - SP - CEP:03317-001</p>
+					</div>
+  </div>
+	<div class="rodape">
+    <span class="direitos">&copy; 2023 - Todos os direitos reservados</span>
+    <span class="criadores">Criado por Thiago Sorrens e Ana Beatriz Araújo</span>
+  </div>
+</body>
+</html>
