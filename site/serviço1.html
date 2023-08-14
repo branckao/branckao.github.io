@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Corretora de Seguros ABC</title>
+    <style>
+ 	#floating-button {
+            position: fixed;
+            right: 50px;
+            bottom: 50px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 20px;
+            line-height: 50px;
+            cursor: pointer;
+            z-index: 9999;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        #floating-button:hover {
+            transform: scale(1.3);
+        }
+        body {
+	    background-image: url(image2.png);
+            background-color: #E0E0E0; /* Fundo amarelo */
+            color: #000000; /* Texto preto */
+            text-align: center; /* Centraliza o conteúdo */
+            margin: 0px;
+            padding: 0;
+										font-family: "Helvética", serif;
+        }
+
+        /* Estilo da barra de navegação */
+        nav {
+            background-image: url(image2.png);
+            color: #ffffff; /* Texto branco */
+            padding: 10px;
+												display: flex;
+            align-items: center;
+        }
+ 	 nav img.logo {
+            width: 130px;
+            height: 50px;
+            margin-right: 200px;
+	margin-left: 20px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: black; /* Texto branco */
+            text-decoration: none;
+									cursor: pointer;
+								font-size:25px;
+									transition: transform 0.2s ease-in-out;
+        }
+					 #nav ul li a:hover {
+            transform: scale(1.3);
+        }
+
+ 	nav ul.social-logos {
+            display: flex;
+            justify-content: flex-end;
+        }
+	nav ul.social-logos2 {
+            display: flex;
+            justify-content: flex-end;
+        }
+        nav ul.social-logos li {
+            margin-right: 10px;
+	margin-left: 150px;
+        }
+  	nav ul.social-logos2 li {
+            margin-right: 10px;
+
+}
+        nav ul.social-logos li a img {
+            width: 30px;
+            height: 30px;
+        }
+	nav ul.social-logos2 li a img {
+            width: 30px;
+            height: 30px;
+        }
+        /* Estilo do conteúdo */
+        h1, h2, h3 {
+            color: #0000ff; /* Títulos em azul */
+        }
+
+        a {
+            color: #0000ff; /* Links em azul */
+            text-decoration: none;
+        }
+
+        /* Estilo do formulário de contato */
+        form {
+            margin-top: 20px;
+            text-align: left; /* Alinha o formulário à esquerda */
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: #0000ff; /* Botão de envio em azul */
+            color: #ffffff; /* Texto branco */
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Estilo das divisões */
+        div {
+            text-align: justify; /* Alinha o texto justificado */
+
+        }
+	.image-container {
+            width: 100%;
+            height: 500px;
+		            max-width: 96%;
+            padding: 10px;
+												margin-left: 10px;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+					
+/* Estilos para o rodapé */
+     .rodape {
+						color: white;
+      background-color: royalblue;
+      padding: 20px;
+      text-align: center;
+    }
+
+    /* Estilos para o texto dos direitos reservados */
+    .direitos {
+      float: left;
+					 margin-left:100px;
+    }
+
+    /* Estilos para o texto dos criadores */
+    .criadores {
+      float: right;
+					 margin-right:100px;
+    }
+					/* Estilos para o menu  */
+					.dropdown {
+            position: relative;
+            display: inline-block;
+								width:100px;
+        }
+
+        .dropdown-content {
+									background-image: url(image2.png);
+            display: none;
+            position: absolute;
+												top:25px;
+            z-index: 1;
+        }
+					.dropdown-content a {
+									font-size: 20px;
+							color: blue;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+					 /* Estilos para o container */
+    .container {
+      display: flex;
+      align-items: center;
+					 justify-content: space-around;
+					height: 250px;
+					border-top: 2px solid blue;
+    }
+
+    /* Estilos para o logotipo */
+    .logo {
+      width: 200px;
+      height: 100px;
+      /* Adicione seus estilos personalizados para o logotipo aqui */
+    }
+
+    /* Estilos para os textos */
+    .textos, .onde {
+      text-align: center;
+					font-size: 20px;
+				
+      /* Adicione seus estilos personalizados para os textos aqui */
+    }
+					.home {
+						            max-width: 96%;
+            padding: 10px;
+												margin-left: 10px;
+					}
+    </style>
+</head>
+<body>
+
+    <!-- Barra de navegação -->
+    <nav>
+	<img class="logo" src="logo2.png" alt="Logo">
+        <ul>
+            <li><a href="home.html">Sobre Nós</a></li>
+            <li><div class="dropdown">
+                    <a href="pagina1.html">Serviços</a>
+                    <div class="dropdown-content">
+                        <a href="pagina1.html">Serviços</a>
+                        <a href="pagina2.html">Serviços 2</a>
+                    </div>
+													</div>
+            </li>
+            <li><a href="cotacao.html">Cotação</a></li>
+        </ul>
+	<ul class="social-logos">
+          <li><a href="https://instagram.com/venturicorretora?igshid=Y2I2MzMwZWM3ZA==" target='_blank'><img src="instagram.png" alt="Instagram"></a></li>
+	</ul>
+	<ul class="social-logos2">
+            <li><a href="#"><img src="https://w7.pngwing.com/pngs/5/164/png-transparent-instagram-icon-thepix-digital-marketing-logo-shiftdelete-instagram-logo-miscellaneous-rectangle-magenta.png" alt="Twitter"></a></li>
+        </ul>
+    </nav>
+
+    <!-- Conteúdo da página inicial -->
+	 <div class="image-container">
+      		  <img id="myImage" src="https://www.saopaulodistribuidora.com.br/img/paginas%7C1352828297135282829761486186.jpg?w=420&h=239" alt="Imagem" />
+	</div>
+    <div class="home">
+        <h1>Bem-vindo à Corretora de Seguros ABC</h1>
+        <p>Oferecemos soluções especializadas em seguros para transportadores e embarcadores.</p>
+        <p>Nossa equipe experiente está pronta para ajudar você a proteger sua carga e minimizar riscos.</p>
+	</div>
+        
+
+<a id="floating-button" href="#" target="_blank">
+        <img src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-png-0-1080x1080.png" alt="Imagem do botão" width="85" height="85">
+    </a>
+
+ <script>
+        var floatingButton = document.getElementById('floating-button');
+        var link = "https://wa.me/11997871975"; // Coloque o link desejado aqui
+
+        floatingButton.addEventListener('click', function () {
+            window.open(link, '_blank');
+        });
+    var images = [
+            "image1.png",
+            "https://www.saopaulodistribuidora.com.br/img/paginas%7C1352828297135282829761486186.jpg?w=420&h=239",
+            "image3.png"
+        ];
+        
+        var currentIndex = 0;
+        
+        function changeImage() {
+            var img = document.getElementById("myImage");
+            img.src = images[currentIndex];
+            
+            currentIndex++;
+            if (currentIndex >= images.length) {
+                currentIndex = 0;
+            }
+        }
+        
+        setInterval(changeImage, 3000); // 10 segundos em milissegundos
+    </script>
+<div class="container">
+    <img class="logo" src="logo3.png" alt="Logo">
+    <div class="textos">
+      <h2>Telefones para contato</h2>
+      <p>(11) 2506-2380</p>
+					 <p>(11) 2506-2354</p>
+	</div>
+    <div class="onde">
+	     <h2>Onde estamos</h2>
+      <p>Rua Serra de Botucatu, 1195 - sala 108 - Tatuapé</p>
+					<p>São Paulo - SP - CEP:03317-001</p>
+					</div>
+  </div>
+<div class="rodape">
+    <span class="direitos">&copy; 2023 - Todos os direitos reservados</span>
+    <span class="criadores">Criado por Thiago Sorrens e Ana Beatriz Araújo</span>
+  </div>
+</body>
+</html>
