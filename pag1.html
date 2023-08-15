@@ -25,15 +25,19 @@
         }
 					/* Adicione media queries para ajustar o botão em dispositivos menores */
 
-        body {
-	    background-image: url(image2.png);
-            color: #000000; /* Texto preto */
-            text-align: center; /* Centraliza o conteúdo */
-            margin: 0px;
-min-height: 100vh;
-										font-family: "Helvética", serif;
-        }
-
+       body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url(image2.png);
+    font-family: "Helvetica", serif;
+}
+					/* Estilos para a área de conteúdo */
+.content {
+    flex: 1;
+    padding: 20px;
+}
         /* Estilo da barra de navegação */
         nav {
             background-image: url(image2.png);
@@ -139,12 +143,13 @@ min-height: 100vh;
 					
 					/* Estilos para o rodapé */
      .rodape {
-						color: white;
-      background-color: royalblue;
-      padding: 20px;
-      text-align: center;
-						bottom:0;
-    }
+    color: white;
+    background-color: royalblue;
+    padding: 20px;
+    text-align: center;
+    bottom: 0;
+    width: 100%; /* Garante que o rodapé ocupe toda a largura */
+}
 
     /* Estilos para o texto dos direitos reservados */
     .direitos {
