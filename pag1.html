@@ -1,40 +1,35 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Corretora de Seguros Venturi</title>
     <style>
 			
-					@media screen and (min-width: 800px) {
+					@media (max-width: 768px) {
     .info-container {
-            display: flex;
-            align-items: center;
-            height: 500px;
-							margin-top:15%%;
-            padding: 20px;
-        }
+        flex-direction: column;
+        height: auto;
+        margin-top: 10%;
+        padding: 20px;
+    }
 
-        .info-text {
-												text-decoration: none;
-            flex: 1;
-            text-align: left;
-            font-size: 25px;
-									margin-left: 50px;
-								
-        }
-					.info-text li{
-															font-weight: bold;
-					}
+    .info-text {
+        text-align: center;
+        font-size: 18px;
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
 
-        .info-image {
-            flex: 1;
-            text-align: right;
-        }
+    .info-image {
+        text-align: center;
+    }
 
-        .info-image img {
-            max-width: 50%; /* Garante que a imagem não ultrapasse o tamanho da div */
-            height: 350px;/*ntém a proporção da imagem */
-        }
-  }
+    .info-image img {
+        max-width: 50%;
+        height: auto;
+    }
+}
+  
  	#floating-button {
             position: fixed;
             right: 50px;
