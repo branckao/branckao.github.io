@@ -25,14 +25,19 @@
 					/* Adicione media queries para ajustar o botão em dispositivos menores */
 
         body {
-	    background-image: url(image2.png);
-            color: #000000; /* Texto preto */
-            text-align: center; /* Centraliza o conteúdo */
-            margin: 0px;
-
-										font-family: "Helvética", serif;
+	    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    background-image: url(image2.png);
+    font-family: "Helvetica", serif;
         }
 
+						/* Estilos para a área de conteúdo */
+.content {
+    flex: 1;
+    padding: 20px;
+}
         /* Estilo da barra de navegação */
         nav {
             background-image: url(image2.png);
@@ -41,6 +46,7 @@
 												display: flex;
             align-items: center;
         }
+				
  	 nav img.logo {
             width: 130px;
             height: 50px;
@@ -112,12 +118,13 @@
         }
 							 /* Estilos para o container */
     .container {
-				margin-top: 10px;
+				
       display: flex;
       align-items: center;
 					 justify-content: space-around;
 					height: 250px;
 					border-top: 2px solid blue;
+					margin-top: 10%;
     }
 
     /* Estilos para o logotipo */
