@@ -1,299 +1,260 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Corretora de Seguros Venturi</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite Especial</title>
     <style>
-			
- 	#floating-button {
-            position: fixed;
-            right: 50px;
-            bottom: 50px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 20px;
-            line-height: 50px;
-            cursor: pointer;
-            z-index: 9999;
-            transition: transform 0.2s ease-in-out;
-        }
-
-        #floating-button:hover {
-            transform: scale(1.3);
-        }
-					/* Adicione media queries para ajustar o botão em dispositivos menores */
-
+        /* Estilo da página e animações */
         body {
-	    background-image: url(image2.png);
-            color: #000000; /* Texto preto */
-            text-align: center; /* Centraliza o conteúdo */
-            margin: 0px;
-
-										font-family: "Helvética", serif;
-        }
-
-        /* Estilo da barra de navegação */
-        nav {
-            background-image: url(image2.png);
-            color: #ffffff; /* Texto branco */
-            padding: 10px;
-												display: flex;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #fff7e5, #f5e6d8);
+            display: flex;
             align-items: center;
-        }
- 	 nav img.logo {
-            width: 130px;
-            height: 50px;
-            margin-right: 20%;
-	margin-left: 20px;
-        }
-					nav img.insta{
-
-						width:30px;
-						height:30px;
-					}
-					.insta{
-												margin-left:auto;
-						margin-right: 5%;
-					}
-
-        nav ul {
-            list-style-type: none;
+            justify-content: center;
+            height: 100vh;
             margin: 0;
-            padding: 0;
+            overflow: hidden;
+            color: #3e3e3e;
         }
 
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            color: black; /* Texto branco */
-            text-decoration: none;
-									cursor: pointer;
-								font-size:25px;
-									transition: transform 0.2s ease-in-out;
-        }
-					 #nav ul li a:hover {
-            transform: scale(1.3);
-        }
-
- 
-					 /* Estilização do menu dropdown */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            width: 100px;
-        }
-
-        .dropdown-content {
-            background-color: aliceblue;
-            background-size: cover;
-            display: none;
+        /* Fundo animado */
+        body::before {
+            content: '';
             position: absolute;
-            top: 25px;
-            z-index: 1;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1), rgba(0, 0, 0, 0.1));
+            animation: rotateBg 15s linear infinite;
         }
 
-        .dropdown-content a {
-            font-size: 20px;
-            color: black;
-            padding: 12px 16px;
+        @keyframes rotateBg {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Card estilizado */
+        .card {
+            position: relative;
+            background-color: #ffffff;
+            border-radius: 12px;
+            width: 80%;
+            max-width: 500px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            color: #3e3e3e;
+            animation: fadeIn 1.5s ease-out;
+            border: 1px solid #e8c9b5;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #c39e7c;
+            margin-bottom: 1.5rem;
+            animation: fadeSlideDown 1s ease-out;
+            font-family: 'Arial', sans-serif;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        p {
+            font-size: 1.1rem;
+            margin: 0.75rem 0;
+            line-height: 1.6;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .highlight {
+            color: #c39e7c;
+            font-weight: bold;
+        }
+
+        /* Botão estilizado */
+        .next-tip-button {
+            display: inline-block;
+            margin-top: 1.5rem;
+            padding: 0.75rem 1.5rem;
+            background-color: #c39e7c;
+            color: #ffffff;
+            border-radius: 6px;
             text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s, transform 0.3s;
+            cursor: pointer;
+            opacity: 0;
+            animation: fadeInUp 1s ease-out forwards;
+            animation-delay: 1s;
+            border: none;
+            font-size: 1.1rem;
+        }
+
+        .next-tip-button:hover:enabled {
+            background-color: #b38468;
+            transform: scale(1.05);
+        }
+
+        .next-tip-button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        /* Timer */
+        .timer {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 0.5rem;
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes fadeSlideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .tip {
+            display: none;
+            opacity: 0;
+        }
+
+        .tip.active {
             display: block;
+            animation: fadeInUp 1s ease-out forwards;
         }
 
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
+        .invitation {
+            display: none;
+            font-size: 1.1rem;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            background-color: #f5ede3;
+            border: 2px solid #c39e7c;
+            color: #5a4a3d;
+            animation: fadeIn 1.5s ease-out;
         }
 
-        .dropdown:hover .dropdown-content {
-            display: block;
+        /* Caixa do nome do restaurante */
+        .reveal-box {
+            display: none;
+            font-size: 1.8rem;
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #c39e7c;
+            color: #ffffff;
+            border-radius: 8px;
+            animation: fadeInUp 1s ease-out forwards;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
         }
-							 /* Estilos para o container */
-    .container {
-      display: flex;
-      align-items: center;
-					 justify-content: space-around;
-					height: 250px;
-					border-top: 2px solid blue;
-    }
-
-    /* Estilos para o logotipo */
-    .logo {
-      width: 200px;
-      height: 100px;
-      /* Adicione seus estilos personalizados para o logotipo aqui */
-    }
-
-    /* Estilos para os textos */
-    .textos, .onde {
-      text-align: center;
-					font-size: 20px;
-				
-      /* Adicione seus estilos personalizados para os textos aqui */
-    }
-					
-					/* Estilos para o rodapé */
-     .rodape {
-						color: white;
-      background-color: royalblue;
-      padding: 20px;
-      text-align: center;
-    }
-
-    /* Estilos para o texto dos direitos reservados */
-    .direitos {
-      float: left;
-					 margin-left:100px;
-    }
-
-    /* Estilos para o texto dos criadores */
-    .criadores {
-      float: right;
-					 margin-right:100px;
-    }
-					.image-container {
-            width: 100%;
-            height: 500px;
-		            max-width: 96%;
-            padding: 10px;
-												margin-left: 10px;
-        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Convite Especial</h1>
         
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-.home {
-						            max-width: 90%;
-            padding: 1%;
-												margin-left: 4%;
-												font-size: 25px;
-					}
-					.home h1,h3 {
-						color:blue;
-					}
-					
-					.contratar {
-						            max-width: 90%;
-            padding: 1%;
-												margin-left: 4%;
-												font-size: 25px;
-					}
-					
-					.contratar h1{
-						color:blue;
-						font-family:sans-serif;
-					}
-					.contratar h3{
-						color:mediumblue;
-					}
-					
-					.premio{
-						text-align: center;
-						max-height: 15%;
-						max-width:  50%;
-						margin-bottom: 10px;
-					}
-	</style>
-	</head>
-					
-					<body>
+        <!-- Dicas -->
+        <p class="tip active">Bem-vindo ao lugar onde a tradição da culinária italiana se encontra com um toque moderno, criando uma experiência gastronômica única.</p>
+        <p class="tip">Prepare-se para saborear pratos que exaltam o frescor dos ingredientes, preparados com amor e dedicação para encantar seu paladar.</p>
+        <p class="tip">Desfrute de um ambiente acolhedor e elegante, ideal para compartilhar momentos especiais e criar lembranças inesquecíveis.</p>
+        <p class="tip">Cada garfada revela uma nova história, dos pratos clássicos às criações inovadoras que celebram a verdadeira essência da Itália.</p>
+        <p class="tip">E para completar a experiência, um atendimento que faz você se sentir em casa, onde cada detalhe é pensado para o seu prazer.</p>
 
-    <!-- Barra de navegação -->
-    <nav>
-	<img class="logo" src="logo2.png" alt="Logo">
-        <ul>
-            <li><a href="index.html">Sobre Nós</a></li>
-            <li><div class="dropdown">
-        <a href="#">Serviços</a>
-        <div class="dropdown-content">
-            <a href="pag1.html">Serviço para Transportador</a>
-            <a href="pag2.html">Serviço para Embarcador</a>
+        <!-- Botão e Cronômetro -->
+        <button class="next-tip-button" onclick="showNextTip()" disabled>Próxima Dica</button>
+        <div class="timer" id="timer">Aguarde...</div>
+
+        <!-- Convite Final -->
+        <div class="invitation" id="invitation">
+            <p>Estou muito empolgado para essa noite! Vamos juntos explorar, nos abraçar e aproveitar cada momento.</p>
+            <p class="highlight">A surpresa final será revelada em breve...</p>
+
+            <!-- Caixa com o nome do restaurante -->
+            <div class="reveal-box" id="revealBox">
+                <p>Abraccio</p>
+            </div>
         </div>
     </div>
-            </li>
-            <li><a href="cotacao.html">Cotação</a></li>
-        </ul>
-					<div class="insta">
-	 <a href="https://instagram.com/venturicorretora?igshid=Y2I2MzMwZWM3ZA==" target='_blank'><img class="insta" src="instagram.png" alt="Instagram"></a>
-					</div>
-    </nav>
-						<div class="image-container">
-      		  <img id="myImage" src="entrada.jpg" alt="Imagem" />
-	</div>
-						<div class="home">
-        <h1>Bem-vindo à Corretora de Seguros Venturi</h1>
-        <p>Do desejo de inovar no mercado de seguros, nosso CEO Walter Venturi fundou a Venturi Corretora com objetivo de atender a demanda de transportes de maneira mais específica.
-</p>
-        <p>Trabalhando desde o início com base nas necessidades do cliente, nosso modelo de venda consultiva diferencia-se das demais por entregarmos todo nosso conhecimento em cada atendimento, agregando grande valor aos serviços prestados.
-</p>
-							<p>Hoje, atendemos transportadores e embarcadores de todo país, visando sempre conseguir as melhores condições para nossos clientes. Além disso, temos parcerias com grandes gerenciadoras, sendo essa mais uma maneira de reduzir os riscos dos embarques.
-</p>
-							<p>Nosso foco não está na quantidade de clientes, mas sim na qualidade das apólices, que aliadas a experiência do nosso time, asseguram plenamente todas as operações. 
-</p>
-						</div>
-						<div class="contratar">
-							      <h1>Motivos para contratar a Venturi </h1>
-							<h3>Relacionamento com grandes seguradoras</h3>
-        <p>A Venturi se diferencia de outras corretoras por ter um forte relacionamento com as maiores seguradoras do mercado, sendo possível garantir descontos e excelentes condições nas apólices negociadas. 
 
-</p>
-							<h3>Agilidade na resolução de problemas
-							</h3>
-							<p>Em caso de sinistro ou qualquer outro imprevisto, nossa equipe está sempre pronta para te atender e resolver seus problemas com auxílio especializado.
+    <script>
+        // Datas e horas de liberação para cada dica
+        const releaseTimes = [
+            new Date('2024-10-31T09:00:00'), // Primeira dica
+            new Date('2024-10-31T15:00:00'), // Segunda dica
+            new Date('2024-10-31T20:00:00'), // Terceira dica
+            new Date('2024-11-01T09:00:00'), // Quarta dica
+            new Date('2024-11-01T18:00:00')  // Quinta dica
+        ];
 
-</p>
-				<h3>Reconhecimento no ramo de transportes
+        let currentTip = 0;
+        const tips = document.querySelectorAll('.tip');
+        const nextButton = document.querySelector('.next-tip-button');
+        const timerDisplay = document.getElementById('timer');
+        const invitation = document.getElementById('invitation');
+        const revealBox = document.getElementById('revealBox');
+        const revealDate = new Date('2024-11-01T23:00:00'); // Data para desbloquear o nome do restaurante
 
+        function showNextTip() {
+            tips[currentTip].classList.remove('active');
+            tips[currentTip].style.opacity = '0';
 
-	</h3>
-							<p>Graças ao nosso brilhante trabalho, a Venturi já foi reconhecida em diversos eventos por seguradoras do ramo. Nossa experiência faz com que Venturi se coloque entre as maiores 
-</p>
-						</div>
-						
+            currentTip++;
+            if (currentTip < tips.length) {
+                tips[currentTip].classList.add('active');
+                startTimer(releaseTimes[currentTip]);
+            } else {
+                nextButton.style.display = 'none';
+                timerDisplay.style.display = 'none';
+                invitation.style.display = 'block';
+                startRevealTimer();
+            }
+        }
 
-<img class="premio" src="premio.jpg" alt="premio" />
+        function startTimer(releaseTime) {
+            nextButton.disabled = true;
+            const countdown = setInterval(() => {
+                const now = new Date();
+                const timeRemaining = releaseTime - now;
 
-					
-<div class="container">
-    <img class="logo" src="logo3.png" alt="Logo">
-    <div class="textos">
-      <h2>Telefones para contato</h2>
-      <p>(11) 2506-2380</p>
-					 <p>(11) 2506-2354</p>
-	</div>
-    <div class="onde">
-	     <h2>Onde estamos</h2>
-      <p>Rua Serra de Botucatu, 1195 - sala 108 - Tatuapé</p>
-					<p>São Paulo - SP - CEP:03317-001</p>
-					</div>
-  </div>
-	
-<a id="floating-button" href="#" target="_blank">
-        <img src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-png-0-1080x1080.png" alt="Imagem do botão" width="85" height="85">
-    </a>
+                if (timeRemaining <= 0) {
+                    clearInterval(countdown);
+                    timerDisplay.textContent = "Dica liberada!";
+                    nextButton.disabled = false;
+                } else {
+                    const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+                    timerDisplay.textContent = `Aguarde ${hours}h ${minutes}m ${seconds}s para a próxima dica.`;
+                }
+            }, 1000);
+        }
 
- <script>
-        var floatingButton = document.getElementById('floating-button');
-        var link = "https://wa.me//5511950524592?text=Ol%c3%a1%2c+vim+pelo+site+e+gostaria+de+fazer+uma+cota%c3%a7%c3%a3o.%0d%0a"; // Coloque o link desejado aqui
+        function startRevealTimer() {
+            const countdown = setInterval(() => {
+                const now = new Date();
+                const timeRemaining = revealDate - now;
 
-        floatingButton.addEventListener('click', function () {
-            window.open(link, '_blank');
-        });
- 
+                if (timeRemaining <= 0) {
+                    clearInterval(countdown);
+                    revealBox.style.display = 'block';
+                }
+            }, 1000);
+        }
+
+        // Iniciar timer para a primeira dica
+        startTimer(releaseTimes[currentTip]);
     </script>
-						
-						<div class="rodape">
-    <span class="direitos">&copy; 2023 - Todos os direitos reservados</span>
-    <span class="criadores">Criado por Thiago Sorrens e Ana Beatriz Araújo</span>
-  </div>
-
-
-
-
-	</body>
+</body>
 </html>
