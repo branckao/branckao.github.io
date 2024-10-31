@@ -166,11 +166,11 @@
         <h1>Convite Especial</h1>
         
         <!-- Dicas -->
-        <p class="tip active">Bem-vindo ao lugar onde a tradição da culinária italiana se encontra com um toque moderno, criando uma experiência gastronômica única.</p>
-        <p class="tip">Prepare-se para saborear pratos que exaltam o frescor dos ingredientes, preparados com amor e dedicação para encantar seu paladar.</p>
-        <p class="tip">Desfrute de um ambiente acolhedor e elegante, ideal para compartilhar momentos especiais e criar lembranças inesquecíveis.</p>
-        <p class="tip">Cada garfada revela uma nova história, dos pratos clássicos às criações inovadoras que celebram a verdadeira essência da Itália.</p>
-        <p class="tip">E para completar a experiência, um atendimento que faz você se sentir em casa, onde cada detalhe é pensado para o seu prazer.</p>
+        <p class="tip active">Bem-vindo ao lugar onde a tradição da culinária italianA se encontra com um toque moderno, criando uma experiência gastronômica única.</p>
+        <p class="tip">Prepare-se para saBorear pratos que exaltam o frescor dos ingredientes, preparados com amor e dedicação paRa encantar seu paladar.</p>
+        <p class="tip">Desfrute de um ambiente aColhedor e elegante, ideal para compartilhar momentos especiais e Criar lembranças inesquecíveis.</p>
+        <p class="tip">Cada garfada revela uma nova histórIa, dos pratos clássicos às criações inovadoras que celebram a verdadeira essência da Itália.</p>
+        <p class="tip">E para completar a experiência, um atendimento que faz você se sentir em casa, Onde cada detalhe é pensado para o seu prazer.</p>
 
         <!-- Botão e Cronômetro -->
         <button class="next-tip-button" onclick="showNextTip()" disabled>Próxima Dica</button>
@@ -178,12 +178,12 @@
 
         <!-- Convite Final -->
         <div class="invitation" id="invitation">
-            <p>Estou muito empolgado para essa noite! Vamos juntos explorar, nos abraçar e aproveitar cada momento.</p>
+            <p>Estou muito empolgado para essa noite! Vamos juntos explorar, nos Abraçar e aproveitar cada momento.</p>
             <p class="highlight">A surpresa final será revelada em breve...</p>
 
             <!-- Caixa com o nome do restaurante -->
             <div class="reveal-box" id="revealBox">
-                <p>Abraccio</p>
+                <p>ABRACCIO</p>
             </div>
         </div>
     </div>
@@ -192,10 +192,10 @@
         // Datas e horas de liberação para cada dica
         const releaseTimes = [
             new Date('2024-10-31T09:00:00'), // Primeira dica
-            new Date('2024-10-31T15:00:00'), // Segunda dica
-            new Date('2024-10-31T20:00:00'), // Terceira dica
-            new Date('2024-11-01T09:00:00'), // Quarta dica
-            new Date('2024-11-01T18:00:00')  // Quinta dica
+            new Date('2024-10-31T10:00:00'), // Segunda dica
+            new Date('2024-10-31T11:00:00'), // Terceira dica
+            new Date('2024-10-31T12:00:00'), // Quarta dica
+            new Date('2024-10-31T13:00:00')  // Quinta dica
         ];
 
         let currentTip = 0;
@@ -204,7 +204,7 @@
         const timerDisplay = document.getElementById('timer');
         const invitation = document.getElementById('invitation');
         const revealBox = document.getElementById('revealBox');
-        const revealDate = new Date('2024-11-01T23:00:00'); // Data para desbloquear o nome do restaurante
+        const revealDate = new Date('2024-10-31T15:00:00'); // Data para desbloquear o nome do restaurante
 
         function showNextTip() {
             tips[currentTip].classList.remove('active');
