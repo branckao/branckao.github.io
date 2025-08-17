@@ -1,327 +1,283 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 <head>
-    <title>Corretora de Seguros Venturi</title>
-    <style>
-			
- 	#floating-button {
-            position: fixed;
-            right: 50px;
-            bottom: 50px;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 20px;
-            line-height: 50px;
-            cursor: pointer;
-            z-index: 9999;
-            transition: transform 0.2s ease-in-out;
-        }
-
-        #floating-button:hover {
-            transform: scale(1.3);
-        }
-					/* Adicione media queries para ajustar o botão em dispositivos menores */
-
-        body {
-	    background-image: url(image2.png);
-            color: #000000; /* Texto preto */
-            text-align: center; /* Centraliza o conteúdo */
-            margin: 0px;
-
-										font-family: "Helvética", serif;
-        }
-
-        /* Estilo da barra de navegação */
-        nav {
-            background-image: url(image2.png);
-            color: #ffffff; /* Texto branco */
-            padding: 10px;
-												display: flex;
-            align-items: center;
-        }
- 	 nav img.logo {
-            width: 130px;
-            height: 50px;
-            margin-right: 20%;
-	margin-left: 20px;
-        }
-					nav img.insta{
-
-						width:30px;
-						height:30px;
-					}
-					.insta{
-												margin-left:auto;
-						margin-right: 5%;
-					}
-
-        nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        nav ul li {
-            display: inline;
-            margin-right: 20px;
-        }
-
-        nav ul li a {
-            color: black; /* Texto branco */
-            text-decoration: none;
-									cursor: pointer;
-								font-size:25px;
-									transition: transform 0.2s ease-in-out;
-        }
-					 #nav ul li a:hover {
-            transform: scale(1.3);
-        }
-
- 
-					 /* Estilização do menu dropdown */
-        .dropdown {
-            position: relative;
-            display: inline-block;
-            width: 100px;
-        }
-
-        .dropdown-content {
-            background-color: aliceblue;
-            background-size: cover;
-            display: none;
-            position: absolute;
-            top: 25px;
-            z-index: 1;
-        }
-
-        .dropdown-content a {
-            font-size: 20px;
-            color: black;
-            padding: 12px 16px;
-            text-decoration: none;
-            display: block;
-        }
-
-        .dropdown-content a:hover {
-            background-color: #f1f1f1;
-        }
-
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
-							 /* Estilos para o container */
-    .container {
-      display: flex;
-      align-items: center;
-					 justify-content: space-around;
-					height: 250px;
-					border-top: 2px solid blue;
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Preventivas</title>
+  <style>
+    :root {
+      --azul: #0e7ad3;
+      --cinza: #f4f6f9;
+      --borda: #e3e8ef;
+      --texto: #0f172a;
     }
-
-    /* Estilos para o logotipo */
-    .logo {
-      width: 200px;
-      height: 100px;
-      /* Adicione seus estilos personalizados para o logotipo aqui */
+    * { box-sizing: border-box; }
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--cinza);
+      color: var(--texto);
+      margin: 0; padding: 20px;
     }
+    h1 { text-align: center; margin: 0 0 10px; }
+    .sub { text-align: center; color: #475569; margin-bottom: 18px; }
 
-    /* Estilos para os textos */
-    .textos, .onde {
-      text-align: center;
-					font-size: 20px;
-				
-      /* Adicione seus estilos personalizados para os textos aqui */
+    .toolbar {
+      max-width: 1000px; margin: 0 auto 16px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; justify-content: center;
     }
-					
-					/* Estilos para o rodapé */
-     .rodape {
-						color: white;
-      background-color: royalblue;
-      padding: 20px;
-      text-align: center;
-    }
+    .toolbar input[type="text"] { flex: 1; min-width: 280px; padding: 8px 10px; border: 1px solid var(--borda); border-radius: 10px; }
+    .btn { padding: 8px 12px; border: 1px solid var(--borda); border-radius: 10px; background: white; cursor: pointer; }
+    .btn:active { transform: translateY(1px); }
+    .status { font-size: 14px; color: #334155; }
 
-    /* Estilos para o texto dos direitos reservados */
-    .direitos {
-      float: left;
-					 margin-left:100px;
-    }
+    .grupo { background: white; margin: 10px auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(2,6,23,.06); overflow: hidden; max-width: 1000px; border: 1px solid var(--borda); }
+    .grupo-header { padding: 14px 16px; background: var(--azul); color: white; cursor: pointer; font-weight: 600; display:flex; justify-content:space-between; align-items:center; }
+    .grupo-header small { opacity: .9; font-weight: 500; }
+    .grupo-conteudo { display: none; padding: 16px; }
 
-    /* Estilos para o texto dos criadores */
-    .criadores {
-      float: right;
-					 margin-right:100px;
-    }
-					.image-container {
-            width: 100%;
-            height: 500px;
-		            max-width: 96%;
-            padding: 10px;
-												margin-left: 10px;
-        }
-        
-        .image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-.home {
-						            max-width: 90%;
-            padding: 1%;
-												margin-left: 4%;
-												font-size: 25px;
-					}
-					.home h1,h3 {
-						color:blue;
-					}
-					
-					.contratar {
-						            max-width: 90%;
-            padding: 1%;
-												margin-left: 4%;
-												font-size: 25px;
-					}
-					
-					.contratar h1{
-						color:blue;
-						font-family:sans-serif;
-					}
-					.contratar h3{
-						color:mediumblue;
-					}
-					
-					.premio{
-						text-align: center;
-						max-height: 15%;
-						max-width:  50%;
-						margin-bottom: 10px;
-					}
-					
-					.img2 {
-					text-align: center;
-						max-height: 400px;
-						max-width:  700px;
-						margin-bottom: 10px;
-					}
-	</style>
-	</head>
-					
-					<body>
+    .preventiva { display: grid; grid-template-columns: 28px 1fr 1.2fr; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px dashed var(--borda); }
+    .preventiva:last-child { border-bottom: 0; }
+    .nome { font-weight: 600; }
+    .preventiva input[type="checkbox"] { width: 18px; height: 18px; }
+    .preventiva input[type="text"] { padding: 8px 10px; border: 1px solid var(--borda); border-radius: 10px; }
 
-    <!-- Barra de navegação -->
-    <nav>
-	<img class="logo" src="logo2.png" alt="Logo">
-        <ul>
-            <li><a href="index.html">Sobre Nós</a></li>
-            <li><div class="dropdown">
-        <a href="#">Serviços</a>
-        <div class="dropdown-content">
-            <a href="pag1.html">Serviço para Transportador</a>
-            <a href="pag2.html">Serviço para Embarcador</a>
-        </div>
-    </div>
-            </li>
-            <li><a href="cotacao.html">Cotação</a></li>
-        </ul>
-					<div class="insta">
-	 <a href="https://instagram.com/venturicorretora?igshid=Y2I2MzMwZWM3ZA==" target='_blank'><img class="insta" src="instagram.png" alt="Instagram"></a>
-					</div>
-    </nav>
-						<div class="image-container">
-      		  <img id="myImage" src="entrada.jpg" alt="Imagem" />
-	</div>
-						<div class="home">
-        <h1>Bem-vindo à Corretora de Seguros Venturi</h1>
-        <p>Do desejo de inovar no mercado de seguros, nosso CEO Walter Venturi fundou a Venturi Corretora com objetivo de atender a demanda de transportes de maneira mais específica.
-</p>
-        <p>Trabalhando desde o início com base nas necessidades do cliente, nosso modelo de venda consultiva diferencia-se das demais por entregarmos todo nosso conhecimento em cada atendimento, agregando grande valor aos serviços prestados.
-</p>
-							<p>Hoje, atendemos transportadores e embarcadores de todo país, visando sempre conseguir as melhores condições para nossos clientes. Além disso, temos parcerias com grandes gerenciadoras, sendo essa mais uma maneira de reduzir os riscos dos embarques.
-</p>
-							<p>Nosso foco não está na quantidade de clientes, mas sim na qualidade das apólices, que aliadas a experiência do nosso time, asseguram plenamente todas as operações. 
-</p>
-						</div>
-						
-						<img class="img2" src="img2.jpg" alt="img2" />
-						
-						<div class="contratar">
-							      <h1>Motivos para contratar a Venturi </h1>
-							<h3>Relacionamento com grandes seguradoras</h3>
-        <p>A Venturi se diferencia de outras corretoras por ter um forte relacionamento com as maiores seguradoras do mercado, sendo possível garantir descontos e excelentes condições nas apólices negociadas. 
+    .area-notas { margin-top: 12px; }
+    textarea { width: 100%; min-height: 70px; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--borda); resize: vertical; }
 
-</p>
-							<h3>Agilidade na resolução de problemas
-							</h3>
-							<p>Em caso de sinistro ou qualquer outro imprevisto, nossa equipe está sempre pronta para te atender e resolver seus problemas com auxílio especializado.
+    .rodape { max-width: 1000px; margin: 14px auto 0; color: #475569; font-size: 13px; text-align:center; }
+  </style>
+</head>
+<body>
+  <h1>Checklist de Preventivas</h1>
+  <div class="sub">6 grupos • 11 preventivas por grupo • Salva local e sincroniza com Google Sheets</div>
 
-</p>
-				<h3>Reconhecimento no ramo de transportes
-
-
-	</h3>
-							<p>Graças ao nosso brilhante trabalho, a Venturi já foi reconhecida em diversos eventos por seguradoras do ramo. Nossa experiência faz com que Venturi se coloque entre as maiores 
-</p>
-						</div>
-						
-
-<img class="premio" src="premio.jpg" alt="premio" />
-
-					
-<div class="container">
-    <img class="logo" src="logo3.png" alt="Logo">
-    <div class="textos">
-      <h2>Telefones para contato</h2>
-      <p>(11) 2506-2380</p>
-					 <p>(11) 2506-2354</p>
-	</div>
-    <div class="onde">
-	     <h2>Onde estamos</h2>
-      <p>Rua Serra de Botucatu, 1195 - sala 108 - Tatuapé</p>
-					<p>São Paulo - SP - CEP:03317-001</p>
-					</div>
+  <div class="toolbar">
+    <input id="webappUrl" type="text" placeholder="Cole aqui a URL do Web App do Google Apps Script (termina com /exec)" />
+    <button class="btn" id="btnSalvarUrl">Usar esta URL</button>
+    <button class="btn" id="btnSync">Forçar sincronização</button>
+    <span class="status" id="syncStatus">Sem sincronização ainda</span>
   </div>
-	
-<a id="floating-button" href="#" target="_blank">
-        <img src="https://logodownload.org/wp-content/uploads/2015/04/whatsapp-logo-png-0-1080x1080.png" alt="Imagem do botão" width="85" height="85">
-    </a>
 
- <script>
-        var floatingButton = document.getElementById('floating-button');
-        var link = "https://wa.me//5511950524592?text=Ol%c3%a1%2c+vim+pelo+site+e+gostaria+de+fazer+uma+cota%c3%a7%c3%a3o.%0d%0a"; // Coloque o link desejado aqui
+  <div id="grupos"></div>
+  <div class="rodape">Dica: clique no cabeçalho do grupo para expandir/fechar. Mudanças salvam automaticamente.</div>
 
-        floatingButton.addEventListener('click', function () {
-            window.open(link, '_blank');
+  <script>
+    // =========================
+    // CONFIGURAÇÃO DOS NOMES
+    // Preencha aqui os nomes pré-definidos das preventivas por grupo (opcional).
+    // Se não preencher, será usado "Preventiva X" por padrão.
+    const NOMES = {
+      1: ["Preventiva 1","Preventiva 2","Preventiva 3","Preventiva 4","Preventiva 5","Preventiva 6","Preventiva 7","Preventiva 8","Preventiva 9","Preventiva 10","Preventiva 11"],
+      2: ["Preventiva 1","Preventiva 2","Preventiva 3","Preventiva 4","Preventiva 5","Preventiva 6","Preventiva 7","Preventiva 8","Preventiva 9","Preventiva 10","Preventiva 11"],
+      3: ["Preventiva 1","Preventiva 2","Preventiva 3","Preventiva 4","Preventiva 5","Preventiva 6","Preventiva 7","Preventiva 8","Preventiva 9","Preventiva 10","Preventiva 11"],
+      4: ["Preventiva 1","Preventiva 2","Preventiva 3","Preventiva 4","Preventiva 5","Preventiva 6","Preventiva 7","Preventiva 8","Preventiva 9","Preventiva 10","Preventiva 11"],
+      5: ["Preventiva 1","Preventiva 2","Preventiva 3","Preventiva 4","Preventiva 5","Preventiva 6","Preventiva 7","Preventiva 8","Preventiva 9","Preventiva 10","Preventiva 11"],
+      6: ["Preventiva 1","Preventiva 2","Preventiva 3","Preventiva 4","Preventiva 5","Preventiva 6","Preventiva 7","Preventiva 8","Preventiva 9","Preventiva 10","Preventiva 11"],
+    };
+
+    // =========================
+    // ESTADO & UTILITÁRIOS
+    const $ = (sel, ctx=document) => ctx.querySelector(sel);
+    const $$ = (sel, ctx=document) => Array.from(ctx.querySelectorAll(sel));
+    const statusEl = $('#syncStatus');
+    const urlInput = $('#webappUrl');
+
+    // Guarda a URL do Web App em localStorage para não precisar editar o código
+    const URL_KEY = 'preventivas_webapp_url';
+    let WEB_APP_URL = "https://script.google.com/macros/s/AKfycbxIQFUF8ZiPS9hppQXslliBbrH9F0GzpLxp9xi0vDQM29BRXuV9xqy3cOO7p1v_VX-b/exec";
+    if (WEB_APP_URL) urlInput.value = WEB_APP_URL;
+
+    $('#btnSalvarUrl').addEventListener('click', () => {
+      WEB_APP_URL = urlInput.value.trim();
+      localStorage.setItem(URL_KEY, WEB_APP_URL);
+      flashStatus('URL salva.');
+    });
+
+    $('#btnSync').addEventListener('click', () => syncNow(true));
+
+    function flashStatus(msg) {
+      statusEl.textContent = msg + ' (' + new Date().toLocaleTimeString() + ')';
+    }
+
+    function salvarLocal(id, valor) {
+      localStorage.setItem(id, valor);
+    }
+
+    function restaurarLocalParaElemento(el) {
+      const id = el.dataset.id;
+      const val = localStorage.getItem(id);
+      if (val == null) return;
+      if (el.type === 'checkbox') {
+        el.checked = (val === 'true');
+      } else {
+        el.value = val;
+      }
+    }
+
+    // =========================
+    // GERAÇÃO DA UI
+    function getNome(grupo, idx) {
+      const arr = NOMES[grupo] || [];
+      return arr[idx-1] || `Preventiva ${idx}`;
+    }
+
+    function gerarGrupo(num) {
+      const wrapper = document.createElement('div');
+      wrapper.className = 'grupo';
+      wrapper.setAttribute('data-grupo', String(num));
+
+      const header = document.createElement('div');
+      header.className = 'grupo-header';
+      header.innerHTML = `<span>Grupo ${num}</span><small>Clique para expandir</small>`;
+
+      const conteudo = document.createElement('div');
+      conteudo.className = 'grupo-conteudo';
+
+      const form = document.createElement('form');
+
+      for (let i = 1; i <= 11; i++) {
+        const linha = document.createElement('div');
+        linha.className = 'preventiva';
+
+        const chk = document.createElement('input');
+        chk.type = 'checkbox';
+        chk.dataset.id = `g${num}p${i}`; // feito
+
+        const nome = document.createElement('div');
+        nome.className = 'nome';
+        nome.textContent = getNome(num, i); // NOME PRÉ-DEFINIDO AQUI 🧷
+
+        const desc = document.createElement('input');
+        desc.type = 'text';
+        desc.placeholder = `Descrição da preventiva ${i}`;
+        desc.dataset.id = `g${num}d${i}`; // descrição
+
+        linha.appendChild(chk);
+        linha.appendChild(nome);
+        linha.appendChild(desc);
+        form.appendChild(linha);
+      }
+
+      // Notas do próximo mês
+      const notasWrap = document.createElement('div');
+      notasWrap.className = 'area-notas';
+      const notasLabel = document.createElement('label');
+      notasLabel.textContent = 'O que precisa para o próximo mês:';
+      const notas = document.createElement('textarea');
+      notas.dataset.id = `g${num}-notas`;
+
+      notasWrap.appendChild(notasLabel);
+      notasWrap.appendChild(notas);
+
+      conteudo.appendChild(form);
+      conteudo.appendChild(notasWrap);
+      wrapper.appendChild(header);
+      wrapper.appendChild(conteudo);
+
+      return wrapper;
+    }
+
+    function gerarTudo() {
+      const container = document.getElementById('grupos');
+      container.innerHTML = '';
+      for (let g = 1; g <= 6; g++) container.appendChild(gerarGrupo(g));
+    }
+
+    // =========================
+    // ABRIR/FECHAR GRUPOS (delegação)
+    document.addEventListener('click', (e) => {
+      const hdr = e.target.closest('.grupo-header');
+      if (!hdr) return;
+      const conteudo = hdr.nextElementSibling;
+      conteudo.style.display = (conteudo.style.display === 'block') ? 'none' : 'block';
+    });
+
+    // =========================
+    // SINCRONIZAÇÃO REMOTA (Google Apps Script)
+    let pendentes = {}; // { id: valor }
+    let syncTimer = null;
+
+    function enfileirar(id, valor) {
+      pendentes[id] = valor;
+      if (syncTimer) clearTimeout(syncTimer);
+      syncTimer = setTimeout(() => syncNow(false), 800); // debounce
+    }
+
+    async function carregarRemoto() {
+      if (!WEB_APP_URL) return;
+      try {
+        flashStatus('Baixando dados remotos...');
+        const resp = await fetch(WEB_APP_URL, { mode: 'cors', cache: 'no-store' });
+        if (!resp.ok) throw new Error('Falha no GET');
+        const dados = await resp.json(); // { id: valor }
+        // aplica no DOM
+        for (const [id, valor] of Object.entries(dados)) {
+          const el = document.querySelector(`[data-id="${CSS.escape(id)}"]`);
+          if (!el) continue;
+          if (el.type === 'checkbox') el.checked = (valor === true || valor === 'true');
+          else el.value = valor;
+          // salva local para manter cache offline
+          salvarLocal(id, (el.type === 'checkbox') ? String(el.checked) : el.value);
+        }
+        flashStatus('Dados remotos aplicados');
+      } catch (err) {
+        flashStatus('Não foi possível carregar do remoto (ok usar offline)');
+        console.warn(err);
+      }
+    }
+
+    async function syncNow(forcado=false) {
+      if (!WEB_APP_URL) { if (forcado) flashStatus('Defina a URL do Web App primeiro.'); return; }
+      const payload = { ...pendentes };
+      if (!Object.keys(payload).length && !forcado) return; // nada a enviar
+      try {
+        flashStatus('Sincronizando...');
+        const resp = await fetch(WEB_APP_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' }, // evita preflight CORS
+          body: JSON.stringify(payload),
+          mode: 'cors',
+          cache: 'no-store'
         });
- var images = [
-            "cam5.jpg",
-            "cam3.jpg",
-            "cam2.jpg"
-        ];
-        
-        var currentIndex = 0;
-        
-        function changeImage() {
-            var img = document.getElementById("myImage");
-            img.src = images[currentIndex];
-            
-            currentIndex++;
-            if (currentIndex >= images.length) {
-                currentIndex = 0;
-            }
-        }
-        
-        setInterval(changeImage, 58000); // 10 segundos em milissegundos
-    </script>
-						
-						<div class="rodape">
-    <span class="direitos">&copy; 2023 - Todos os direitos reservados</span>
-    <span class="criadores">Criado por Thiago Sorrens e Ana Beatriz Araújo</span>
-  </div>
+        if (!resp.ok) throw new Error('Falha no POST');
+        pendentes = {}; // limpou fila
+        flashStatus('Sincronizado');
+      } catch (err) {
+        flashStatus('Falha ao sincronizar (será tentado depois)');
+        console.warn(err);
+      }
+    }
 
+    // =========================
+    // INICIALIZAÇÃO
+    document.addEventListener('DOMContentLoaded', () => {
+      gerarTudo();
 
+      // Restaura localStorage para todos os campos criados
+      $$('input[type="checkbox"], input[type="text"], textarea').forEach(el => restaurarLocalParaElemento(el));
 
+      // Listeners para salvar local + enfileirar sync
+      $$('input[type="checkbox"]').forEach(chk => {
+        chk.addEventListener('change', () => {
+          salvarLocal(chk.dataset.id, String(chk.checked));
+          enfileirar(chk.dataset.id, chk.checked);
+        });
+      });
+      $$('input[type="text"]').forEach(inp => {
+        inp.addEventListener('input', () => {
+          salvarLocal(inp.dataset.id, inp.value);
+          enfileirar(inp.dataset.id, inp.value);
+        });
+      });
+      $$('textarea').forEach(area => {
+        area.addEventListener('input', () => {
+          salvarLocal(area.dataset.id, area.value);
+          enfileirar(area.dataset.id, area.value);
+        });
+      });
 
-	</body>
+      // Tenta carregar do remoto por último, para sobrepor com o que estiver na planilha
+      carregarRemoto();
+    });
+  </script>
+</body>
 </html>
