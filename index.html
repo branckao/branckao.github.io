@@ -5,46 +5,96 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Preventivas</title>
   <style>
-    :root {
-      --azul: #0e7ad3;
-      --cinza: #f4f6f9;
-      --borda: #e3e8ef;
-      --texto: #0f172a;
-    }
-    * { box-sizing: border-box; }
-    body {
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: var(--cinza);
-      color: var(--texto);
-      margin: 0; padding: 20px;
-    }
-    h1 { text-align: center; margin: 0 0 10px; }
-    .sub { text-align: center; color: #475569; margin-bottom: 18px; }
+  :root {
+    --bg: #0b0b0b;
+    --card: #141414;
+    --card-dark: #0f0f0f;
+    --azul: #1d8cff;
+    --borda: #2a2a2a;
+    --texto: #e5e5e5;
+    --texto-suave: #9ca3af;
+    --input-bg: #1a1a1a;
+  }
 
-    .toolbar {
-      max-width: 1000px; margin: 0 auto 16px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; justify-content: center;
-    }
-    .toolbar input[type="text"] { flex: 1; min-width: 280px; padding: 8px 10px; border: 1px solid var(--borda); border-radius: 10px; }
-    .btn { padding: 8px 12px; border: 1px solid var(--borda); border-radius: 10px; background: white; cursor: pointer; }
-    .btn:active { transform: translateY(1px); }
-    .status { font-size: 14px; color: #334155; }
+  * { box-sizing: border-box; }
 
-    .grupo { background: white; margin: 10px auto; border-radius: 12px; box-shadow: 0 4px 10px rgba(2,6,23,.06); overflow: hidden; max-width: 1000px; border: 1px solid var(--borda); }
-    .grupo-header { padding: 14px 16px; background: var(--azul); color: white; cursor: pointer; font-weight: 600; display:flex; justify-content:space-between; align-items:center; }
-    .grupo-header small { opacity: .9; font-weight: 500; }
-    .grupo-conteudo { display: none; padding: 16px; }
+  body {
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--texto);
+    margin: 0; padding: 20px;
+  }
 
-    .preventiva { display: grid; grid-template-columns: 28px 1fr 1.2fr; gap: 10px; align-items: center; padding: 8px 0; border-bottom: 1px dashed var(--borda); }
-    .preventiva:last-child { border-bottom: 0; }
-    .nome { font-weight: 600; }
-    .preventiva input[type="checkbox"] { width: 18px; height: 18px; }
-    .preventiva input[type="text"] { padding: 8px 10px; border: 1px solid var(--borda); border-radius: 10px; }
+  h1 { text-align: center; margin: 0 0 10px; color: var(--texto); }
+  .sub { text-align: center; color: var(--texto-suave); margin-bottom: 18px; }
 
-    .area-notas { margin-top: 12px; }
-    textarea { width: 100%; min-height: 70px; padding: 10px 12px; border-radius: 12px; border: 1px solid var(--borda); resize: vertical; }
+  .toolbar {
+    max-width: 1000px; margin: 0 auto 16px; display: flex;
+    gap: 8px; flex-wrap: wrap; align-items: center; justify-content: center;
+  }
+  .toolbar input[type="text"] {
+    flex: 1; min-width: 280px; padding: 8px 10px;
+    background: var(--input-bg); border: 1px solid var(--borda);
+    color: var(--texto); border-radius: 10px;
+  }
+  .btn {
+    padding: 8px 12px; border: 1px solid var(--borda); border-radius: 10px;
+    background: var(--card); color: var(--texto);
+    cursor: pointer; transition: 0.2s;
+  }
+  .btn:hover { background: var(--card-dark); }
+  .btn:active { transform: scale(0.97); }
+  .status { font-size: 14px; color: var(--texto-suave); }
 
-    .rodape { max-width: 1000px; margin: 14px auto 0; color: #475569; font-size: 13px; text-align:center; }
-  </style>
+  .grupo {
+    background: var(--card); margin: 10px auto; border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+    overflow: hidden; max-width: 1000px; border: 1px solid var(--borda);
+  }
+
+  .grupo-header {
+    padding: 14px 16px; background: var(--card-dark);
+    cursor: pointer; font-weight: 600; display:flex;
+    justify-content:space-between; align-items:center; color: var(--texto);
+  }
+  .grupo-header small { opacity: .8; font-weight: 400; }
+
+  .grupo-conteudo { display: none; padding: 16px; }
+
+  .preventiva {
+    display: grid; grid-template-columns: 28px 1fr 1.2fr; gap: 10px;
+    align-items: center; padding: 8px 0; border-bottom: 1px dashed var(--borda);
+  }
+  .preventiva:last-child { border-bottom: 0; }
+
+  .nome { font-weight: 600; color: var(--texto); }
+  .preventiva input[type="checkbox"] { width: 18px; height: 18px; cursor: pointer; }
+
+  .preventiva input[type="text"] {
+    padding: 8px 10px; border: 1px solid var(--borda);
+    border-radius: 10px; background: var(--input-bg);
+    color: var(--texto);
+  }
+
+  .btn-limpar {
+    margin-top: 10px; padding: 8px 14px;
+    background: #b91c1c; color:white; border:none;
+    border-radius:10px; cursor:pointer; transition:0.2s;
+  }
+  .btn-limpar:hover { background:#dc2626; }
+
+  textarea {
+    width: 100%; min-height: 70px; padding: 10px 12px;
+    border-radius: 12px; border: 1px solid var(--borda);
+    resize: vertical; background: var(--input-bg); color: var(--texto);
+  }
+
+  .rodape {
+    max-width: 1000px; margin: 14px auto 0; color: var(--texto-suave);
+    font-size: 13px; text-align:center;
+  }
+</style>
+
 </head>
 <body>
   <h1>Checklist de Preventivas</h1>
@@ -168,10 +218,32 @@
       notasWrap.appendChild(notasLabel);
       notasWrap.appendChild(notas);
 
-      conteudo.appendChild(form);
-      conteudo.appendChild(notasWrap);
-      wrapper.appendChild(header);
-      wrapper.appendChild(conteudo);
+     conteudo.appendChild(form);
+conteudo.appendChild(notasWrap);
+
+// --- BOTÃO DE LIMPAR CHECKLIST DO GRUPO ---
+const btnLimpar = document.createElement('button');
+btnLimpar.textContent = "Limpar checklist do grupo";
+btnLimpar.className = "btn-limpar";
+
+btnLimpar.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  const checks = form.querySelectorAll('input[type="checkbox"]');
+  checks.forEach(chk => {
+    chk.checked = false;
+    salvarLocal(chk.dataset.id, "false");
+    enfileirar(chk.dataset.id, false);
+  });
+
+  flashStatus(`Checklist do Grupo ${num} limpo`);
+});
+
+conteudo.appendChild(btnLimpar);
+// -------------------------------------------
+
+wrapper.appendChild(header);
+wrapper.appendChild(conteudo);
 
       return wrapper;
     }
@@ -277,10 +349,15 @@
 
       // Tenta carregar do remoto por último, para sobrepor com o que estiver na planilha
       carregarRemoto();
-    });
+
+    setInterval(() => {
+  carregarRemoto();
+}, 5000);
+          });
   </script>
 </body>
 </html>
+
 
 
 
