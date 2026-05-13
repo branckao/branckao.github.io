@@ -379,8 +379,6 @@ function atualizarContadores() {
 
  atualizarContadores();
 });
-});
-        });
       });
       $$('input[type="text"]').forEach(inp => {
         inp.addEventListener('input', () => {
@@ -397,6 +395,14 @@ function atualizarContadores() {
 
       // Tenta carregar do remoto por último, para sobrepor com o que estiver na planilha
       carregarRemoto();
+      atualizarContadores();
+
+setInterval(() => {
+  carregarRemoto();
+  atualizarContadores();
+}, 10000);
+
+});
 
   </script>
 </body>
