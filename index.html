@@ -109,8 +109,8 @@
 
   <div id="grupos"></div>
   <div class="rodape">
-  <div id="contadorTotal">Total concluído: 0/66</div>
-  <br>
+  <div id="contadorTotal">Total concluído: 0/72</div>
+</div>
   Dica: clique no cabeçalho do grupo para expandir/fechar. Mudanças salvam automaticamente.
 </div>
 
@@ -331,9 +331,8 @@ wrapper.appendChild(conteudo);
       }
     }
 
-    // =========================
-
-    // CONTADORES
+   // =========================
+// CONTADORES
 
 function atualizarContadores() {
   let totalFeitos = 0;
@@ -361,6 +360,7 @@ function atualizarContadores() {
       `Total concluído: ${totalFeitos}/${totalPreventivas}`;
   }
 }
+    // =========================
     // INICIALIZAÇÃO
     document.addEventListener('DOMContentLoaded', () => {
       gerarTudo();
@@ -374,7 +374,8 @@ function atualizarContadores() {
   salvarLocal(chk.dataset.id, String(chk.checked));
   enfileirar(chk.dataset.id, chk.checked);
 
-  atualizarContadores();
+ atualizarContadores();
+});
 });
         });
       });
