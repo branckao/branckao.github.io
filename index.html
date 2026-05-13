@@ -196,7 +196,9 @@
 
       const form = document.createElement('form');
 
-      for (let i = 1; i <= 12; i++) {
+      const quantidade = (NOMES[num] || []).length;
+
+for (let i = 1; i <= quantidade; i++) {
         const linha = document.createElement('div');
         linha.className = 'preventiva';
 
